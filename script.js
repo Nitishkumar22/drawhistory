@@ -5,7 +5,7 @@ function locomotive() {
     const locoScroll = new LocomotiveScroll({
         el: document.querySelector("#main"),
         smooth: true,
-        smartphone:{ smooth: true },
+        smartphone: { smooth: true },
         getDirection: true
     });
     locoScroll.on("scroll", ScrollTrigger.update);
@@ -26,8 +26,8 @@ function locomotive() {
 
 function swiperJs() {
     var swiper = new Swiper(".mySwiper", {
-        autoplay:{
-            delay:3000,
+        autoplay: {
+            delay: 3000,
             disableOnInteraction: false,
         },
         pagination: {
@@ -56,8 +56,155 @@ function navPageAnimation() {
         })
 }
 
+
+
+
+function loadingpage() {
+
+    var t00 = Math.floor(Math.random() * 30)
+    var t35 = Math.floor(Math.random() * 31) + 20
+    var t90 = Math.floor(Math.random() * 21) + 80
+
+    document.querySelector("#one").innerHTML = t00;
+    document.querySelector("#two").innerHTML = t35;
+    document.querySelector("#three").innerHTML = t90;
+
+
+
+
+    var tl = gsap.timeline();
+    tl.from("#one", {
+        onStart: function () {
+            $('#one').textillate({
+                in: {
+                    effect: 'fadeInUp',
+                    callback: function () {
+                        $('#one').textillate('out')
+                    }
+                },
+                out: { effect: 'fadeOutUp' }
+            });
+        }
+    })
+        .from("#two", {
+            opacity: 0,
+            delay: 1,
+            onStart: function () {
+                $('#two').textillate({
+                    in: {
+                        effect: 'fadeInUp',
+                        callback: function () {
+                            $('#two').textillate('out')
+                        }
+                    },
+                    out: { effect: 'fadeOutUp' }
+                });
+            }
+        })
+        .from("#three", {
+            opacity: 0,
+            color: "red",
+            delay: 1,
+            onStart: function () {
+                $('#three').textillate({
+                    in: {
+                        effect: 'fadeInUp',
+                        callback: function () {
+                            $('#three').textillate('out')
+                        }
+                    },
+                    out: { effect: 'fadeOutUp' }
+                });
+            }
+        })
+
+        .from("#four", {
+            opacity: 0,
+            delay: 1,
+            onStart: function () {
+                $('#four').textillate({
+                    in: {
+                        effect: 'fadeInUp',
+                        callback: function () {
+                            $('#four').textillate('out')
+                        }
+                    },
+                    out: { effect: 'fadeOutUp' }
+                });
+            }
+        })
+        .to("#over", {
+            height: "0%",
+            delay: 1,
+            duration: 2,
+            ease: "Power4.easeOut"
+
+        })
+        .to("#over>H3", {
+            opacity: 0,
+            delay: -1,
+
+        })
+    tl.from("#centertxt>h1", {
+        opacity: 0,
+        y: "40%",
+        duration: 2,
+        ease: "bounce.out"
+
+    })
+    tl.from("#image", {
+        opacity: 0,
+        x: "50%",
+        duration: 1,
+    })
+    tl.to("#image", {
+        width: "30%",
+        height: "80%",
+        delay: 1,
+        duration: 1,
+              
+    })
+    tl.from("#problem", {
+        opacity: 0,
+        x: "-50%",
+        duration: 1,
+    }, "-=1")
+
+}
+
+function swiperjs1() {
+
+
+    var swiper1 = new Swiper(".mySwiper1", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+        },
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+    });
+}
+
+
+
+
+
+loadingpage()
 navPageAnimation()
 locomotive()
 swiperJs()
+swiperjs1()
 
 

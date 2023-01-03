@@ -40,15 +40,6 @@ body {
     position: relative;
 }
 
-#circle {
-    position: absolute;
-    z-index: 99999;
-    width: 15px;
-    height: 15px;
-    background-color: rgb(0, 0, 0);
-    border-radius: 50%;
-}
-
 #nav {
     position: fixed;
     z-index: 999;
@@ -176,10 +167,12 @@ body {
     font-size: 4.5vw;
     text-align: center;
     line-height: 8vw;
+    
 }
 
 #centertxt h1 {
     font-weight: 400;
+    
 
 }
 
@@ -238,6 +231,7 @@ body {
     margin-top: 25vh;
     display: flex;
     gap: 2vw;
+    border-bottom: 1px solid #000;
 }
 
 .team {
@@ -261,6 +255,7 @@ body {
     font-size: 2.2vw;
     font-weight: 500;
     margin-top: 5vh;
+    margin-bottom: 3vh;
     margin-bottom: 2vh;
 }
 
@@ -268,8 +263,34 @@ body {
     text-transform: uppercase;
     color: #333;
     font-weight: 500;
-    font-size: 1vw;
-    word-spacing: 10px;
+    font-size: .8vw;
+    word-spacing: 5px;
+}
+#swiperjs{
+    margin-top: 3vh;
+    width: 100%;
+    height: 50vh;
+    position: relative;
+    overflow: hidden;
+    /* background-color: RED; */
+}
+.swiper1 {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper1 .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    border-radius: 20px;
 }
 
 #who {
@@ -280,6 +301,7 @@ body {
     /* margin-bottom: 10vh; */
     /* background-color: red; */
 }
+
 
 #wholeft {
     width: 50vw;
@@ -746,11 +768,70 @@ body {
 }
 
 
+#over{
+    /* display: none; */
+    position: absolute;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    z-index: 9999999;
+    background-color: black;
+
+}
+#over>h1{
+    font-size: 10vw;
+    position: absolute;
+    right: 5%;
+    overflow: hidden;
+}
+#one{
+    bottom: 5%;
+}
+#two{
+    bottom: 25%;
+}
+#three{
+  bottom: 50%;
+}
+#four{
+    top: 5%;
+}
+#text{
+    position: absolute;
+    top: 11%;
+    font-size: 2vw;
+    font-weight: 100;
+    left: 6%;
+}
+#over>img{
+    position: absolute;
+    height: 50vh;
+    width: 25vw;
+    bottom:10%;
+    left: 10%;
+}
+
 
 
 /* responsive code  */
 
 @media(max-width: 500px) {
+    #over>h1{
+        font-size: 12vh;
+        position: absolute;
+        right: 5%;
+        overflow: hidden;
+    }
+    #text{
+        position: absolute;
+        top: 12%;
+        width: 60%;
+        font-size: 4vh;
+        font-weight: 100;
+        left: 6%;
+        /* background-color: red; */
+    }
     #nav {
         padding: 1vh 2vh;
     }
